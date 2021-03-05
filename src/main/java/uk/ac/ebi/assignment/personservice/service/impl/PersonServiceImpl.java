@@ -25,7 +25,8 @@ public class PersonServiceImpl implements PersonService {
 
     @Override
     public Person getPerson(Long id) {
-        return personRepository.findById(id).orElseThrow(() -> new PersonNotFoundException(id));
+        return personRepository.findById(id)
+                .orElseThrow(() -> new PersonNotFoundException(id));
     }
 
     @Override
@@ -35,13 +36,16 @@ public class PersonServiceImpl implements PersonService {
 
     @Override
     public Person updatePerson(Person person, Long id) {
-        return personRepository.findById(id).map(personEntity -> {
-            personEntity.setFirstName(person.getFirstName());
-            personEntity.setLastName(person.getLastName());
-            personEntity.setAge(person.getAge());
-            personEntity.setFavouriteColour(person.getFavouriteColour());
-            return personRepository.save(personEntity);
-        }).orElseThrow(() -> new PersonNotFoundException(id));
+        return personRepository.findById(id)
+                .map(
+                        personEntity -> {
+                            personEntity.setFirstName(person.getFirstName());
+                            personEntity.setLastName(person.getLastName());
+                            personEntity.setAge(person.getAge());
+                            personEntity.setFavouriteColour(person.getFavouriteColour());
+                            return personRepository.save(personEntity);
+                        })
+                .orElseThrow(() -> new PersonNotFoundException(id));
     }
 
     @Override
