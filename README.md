@@ -77,7 +77,7 @@ docker stop <container-id>
 docker rm <container-id>
 ```
 
-## Test the app in Kubernetes
+## Test the app in Kubernetes(test 1)
 Before deploying the image in Kubertetes cluster push the image into docker registry and change the image name as per the docker registry. Here the services is exposed at 3000. I have attached sample deployment file. To run it use command
 
 ```

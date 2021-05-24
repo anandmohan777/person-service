@@ -14,7 +14,7 @@
     <name>person-service</name>
     <description>Demo project for Spring Boot</description>
     <properties>
-        <java.version>12</java.version>
+        <java.version>13</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
     </properties>
