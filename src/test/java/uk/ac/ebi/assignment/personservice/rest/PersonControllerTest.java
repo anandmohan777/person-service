@@ -42,8 +42,6 @@ public class PersonControllerTest {
         mvc.perform(get("/person"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(2)));
-
-        //test2
     }
 
     @Test
